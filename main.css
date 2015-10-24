@@ -1,0 +1,13 @@
+/*
+white fefefe
+black 1c1e21
+mark1 74c16c
+mark2 3eb52f
+*/
+
+html {
+    font-family: 'open sans', sans-serif;
+    color: #1c1e21;
+    background-color: #fefefe;
+    padding: 0; margin: 0;
+}
