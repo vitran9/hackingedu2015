@@ -43,12 +43,6 @@ margin: 0;
     left: 50%;
     transform: translate(-50%, -50%);
 }
-#tool {
-    min-height:90vh;
-}
-form {
-    text-align: center;
-}
 input, select, #submitButton {
     -webkit-appearance:none;
     background-color: #fefefe;
@@ -84,7 +78,7 @@ input:focus {
     background-color: #fefefe;
     font-family: 'hack', monospace;
     color:#1c1e21;
-    padding:3em;
+    padding:3em 3em 9em 3em;
     border-radius:.5em .5em 0 0;
     margin: 0 auto;
     margin-top:5em;
@@ -130,4 +124,18 @@ input:focus {
 }
 .selectedAns {
     background-color:#d1d1d2;
+}
+.quarter {
+    padding:1em;
+    margin-bottom:1em;
+    border-left: 3px solid #fb7871;
+}
+.quarterLabel {
+    font-size:.9em;
+    color: #d1d1d2;
+    text-transform: uppercase;
+    display: block;
+}
+.hidden {
+    display:none;
 }

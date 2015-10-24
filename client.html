@@ -34,23 +34,31 @@
                 var choice1 = document.querySelector("#hpQ1Choice1");
                 choice1.classList.add("selectedAns");
                 chapter2(1);
+                document.getElementById("major").value = "cs";
+                document.getElementById("mainForm").submit();
             });
             $('#hpQ1Choice2').click(function() {
                 var choice2 = document.querySelector("#hpQ1Choice2");
                 choice2.classList.add("selectedAns");
                 chapter2(2);
+                document.getElementById("major").value = "psych";
+                document.getElementById("mainForm").submit();
             });
         });
 
         function chapter2(major) {
             $('#ch2').teletype({
-                text: [ 'Great choice! Gimme just a second...^1000' ],
+                text: [ 'Great choice! Gimme just a second...^1000 ',
+            '\nGreat, all done! Here\'s what we\'ve got!' ],
                 typeDelay: 0,
                 delay: 800,
                 loop: 1,
                 preserve: true,
                 callbackFinished: function( teletype ) {
-                    alert('All done! You chose ' +major);
+                    teletype.setCursor('');
+                    $( '.report' ).slideToggle('normal');
+                    smoothScroll.animateScroll( null, '#report' );
+                    $( '.report' ).style.padding = "3em";
                 }
             });
         }
@@ -70,7 +78,6 @@
     <div id="tool"><br id="toolDiv">
         <div class="toolDiv">
             <span class="introText">
-            Hey there!
             We know that picking a major can be stressful, and unnecessarily confusing.
             We're here to take that pain away.
                 <br><br>
@@ -81,34 +88,89 @@
             Enjoy!
                 <br><br>
             </span>
-
-
-            <form method="post" name="mainForm" action="main.php">
-                <!--<select onchange="this.form.submit()">
-                    <option value="" disabled selected>Pick a major!</option>
-                    <option value="CS">CS</option>
-                    <option value="x">x</option>
-                    <option value="y">y</option>
-                </select>-->
-            <!-- RESPOND WITH PREREQ QUESTIONS, IF NECESSARY -->
-            <!-- ELSE, toggle whitePaper -->
-
         </div>
 
         <div class="whitePaper">
             <!-- THROW THE RESULTS RIGHT HERE -->
-            <form method="post" name="mainForm" action="main.php">
+            <form method="post" name="mainForm" action="main.php" id="mainForm">
                 <div id="ch1" class="chatBot"></div>
                 <div id="hp1" class="humanPerson" style="display:none">
-                    <div href="#" class="questionChoice" id="hpQ1Choice1">CS</div>
-                    <div href="#" class="questionChoice" id="hpQ1Choice2">Psych</div>
+                    <div data-scroll href="#bottom" class="questionChoice" id="hpQ1Choice1">CS</div>
+                    <div data-scroll href="#bottom" class="questionChoice" id="hpQ1Choice2">Psych</div>
                     <div href="#" class="questionChoice disabledChoice">More soon!</div>
                 </div>
+                <input type="text" id="major" name="major">
                 <br><br><div id="ch2" class="chatBot"></div>
                 <!--<span id="ch3">Awesome sauce! One sec while I check what prereqs you'll need.</span>
                 <span id="ch4">Alright, back. Jumping right in, have you... </span>-->
             </form>
-            <br><br><br><br><br><br>
+
+                <br><br>
+            <div class="report hidden" id="report">
+                <div class="quarter">
+                    <span class="quarterLabel">FALL</span>
+                    <span>$classname</span>
+                    <span>($credits)</span>
+                </div>
+                <div class="quarter">
+                    <span class="quarterLabel">WINTER</span>
+                    <span>$classname</span>
+                    <span>($credits)</span>
+                </div>
+                <div class="quarter">
+                    <span class="quarterLabel">SPRING</span>
+                    <span>$classname</span>
+                    <span>($credits)</span>
+                </div>
+                    <br>
+                <div class="quarter">
+                    <span class="quarterLabel">FALL</span>
+                    <span>$classname</span>
+                    <span>($credits)</span>
+                </div>
+                <div class="quarter">
+                    <span class="quarterLabel">WINTER</span>
+                    <span>$classname</span>
+                    <span>($credits)</span>
+                </div>
+                <div class="quarter">
+                    <span class="quarterLabel">SPRING</span>
+                    <span>$classname</span>
+                    <span>($credits)</span>
+                </div>
+                    <br>
+                <div class="quarter">
+                    <span class="quarterLabel">FALL</span>
+                    <span>$classname</span>
+                    <span>($credits)</span>
+                </div>
+                <div class="quarter">
+                    <span class="quarterLabel">WINTER</span>
+                    <span>$classname</span>
+                    <span>($credits)</span>
+                </div>
+                <div class="quarter">
+                    <span class="quarterLabel">SPRING</span>
+                    <span>$classname</span>
+                    <span>($credits)</span>
+                </div>
+                    <br>
+                <div class="quarter">
+                    <span class="quarterLabel">FALL</span>
+                    <span>$classname</span>
+                    <span>($credits)</span>
+                </div>
+                <div class="quarter">
+                    <span class="quarterLabel">WINTER</span>
+                    <span>$classname</span>
+                    <span>($credits)</span>
+                </div>
+                <div class="quarter">
+                    <span class="quarterLabel">SPRING</span>
+                    <span>$classname</span>
+                    <span>($credits)</span>
+                </div>
+            </div>
         </div>
     </div>
 </body>
