@@ -8,7 +8,7 @@ mark2 3eb52f
 html, body {
     font-family: 'open sans', sans-serif;
     color: #1c1e21;
-    background-color: #74c16c;
+    background: linear-gradient(135deg, rgba(254,239,202,1) 0%, rgba(251,120,113,1) 75%, rgba(251,120,113,1) 100%);
     padding:0;
     margin:0;
 }
@@ -32,7 +32,8 @@ margin: 0;
     height:90vh;
     width:100vw;
     text-align: center;
-    background: url(1.jpg) no-repeat center center;
+    background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(246,246,246,0.53) 60%, rgba(237,237,237,0) 100%),
+    url('1.jpg') no-repeat center center scroll;
     background-size: cover;
     position:relative;
 }
@@ -67,6 +68,9 @@ input, select, #submitButton {
     color:#74c16c;
     box-shadow: 0 0 12px 0 rgba(28,30,33,0.2);
 }
+.introText {
+    font-size: 1.1em;
+}
 input:focus {
     outline: none;
     box-shadow: 0 0 12px 0 rgba(28,30,33,0.2);
@@ -77,8 +81,8 @@ input:focus {
     margin-top:3em;
 }
 .whitePaper {
-    display:none;
     background-color: #fefefe;
+    font-family: 'hack', monospace;
     color:#1c1e21;
     padding:3em;
     border-radius:.5em .5em 0 0;
