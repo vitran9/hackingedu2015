@@ -7,10 +7,11 @@
 
     <link rel="stylesheet" type="text/css" href="main.css">
     <link rel="stylesheet" type="text/css" href="animate.css">
-    <link rel="stylesheet" type="text/css" href="jquery.fullpage.css" />
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700' rel='stylesheet' type='text/css'>
     <script src="jquery.js"></script>
     <script type="text/javascript" src="animate.js" ></script>
+    <script type="text/javascript" src="smooth-scroll.min.js" ></script>
+    <script type="text/javascript">smoothScroll.init();</script>
     <script type="text/javascript">
         $(document).ready(function() {
             // Execute code on page load, if necessary
@@ -21,12 +22,49 @@
 
 <body id="home">
     <div id="landing">
-        <h1>Picking a major can be really hard.</h1>
-        <span class="subtext">We're here to help.</span><br>
-        <a href="#" id="getStarted"><div class="button">Let's get started</div></a>
+        <div class="landDiv">
+            <h1>Picking a major can be really hard.</h1>
+            <span class="subtext">We're here to help.</span><br><br>
+            
+        </div>
     </div>
 
-    <div id="tool" style="">test content
+    <div id="tool"><br id="toolDiv">
+        <div class="toolDiv">
+            Hey there!
+            We know that picking a major can be stressful, and unnecessarily confusing.
+            We're here to take that pain away.
+                <br><br>
+            We'll ask you a few simple questions, and then give you an
+            easy to follow plan to help you spend more time graduating, and less time
+            navigating obscure prereq charts.
+                <br><br>
+            Enjoy!
+                <br><br>
+
+
+            <form method="post" name="mainForm" action="main.php">
+                <!--<input name="university" placeholder="UCSC" type="text">-->
+                <select onchange="this.form.submit()">
+                    <option value="" disabled selected>Pick a major!</option>
+                    <option value="CS">CS</option>
+                    <option value="x">x</option>
+                    <option value="y">y</option>
+                </select>
+            </form>
+            <!-- RESPOND WITH PREREQ QUESTIONS, IF NECESSARY -->
+            <!-- ELSE, toggle whitePaper -->
+
+        </div>
+
+        <div class="whitePaper">
+            <!-- THROW THE RESULTS RIGHT HERE -->
+
+            <span class="errorText">Uh-oh, looks like something's gone wrong!<br>
+                <a href="javascript:window.location.reload(true)">Try again?</a>
+                <br><br><br><br><br><br><br><br><br><br><br>
+            </span>
+        </div>
     </div>
 </body>
 
