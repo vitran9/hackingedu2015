@@ -5,9 +5,29 @@ mark1 74c16c
 mark2 3eb52f
 */
 
-html {
+html, body {
     font-family: 'open sans', sans-serif;
     color: #1c1e21;
     background-color: #fefefe;
-    padding: 0; margin: 0;
+    padding: 0;
+    margin: 0;
+}
+.button {
+    padding:1em;
+    color: #fefefe;
+    background-color:#74c16c;
+    display:inline-block;
+    border-radius:.3em;
+}
+.button:hover {
+    background-color: #3eb52f;
+}
+#landing {
+    height:90vh;
+    width:100vw;
+    background-image: url();
+}
+#tool {
+    background-color: #74c16c;
+    min-height:100vh;
 }
