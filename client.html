@@ -14,7 +14,7 @@
     <script type="text/javascript">smoothScroll.init();</script>
     <script src="jquery.teletype.js"></script>
     <script>
-        $(function(){
+        $(function chapter1(){
             $('#ch1').teletype({
                 text: [ 'Hey there! I\'ll be your personal assistant today!',
                 '\nTo start, what\'s your major?^1000' ],
@@ -24,14 +24,36 @@
                 preserve: true,
                 callbackFinished: function( teletype ) {
                     $( '#hp1' ).slideToggle('normal');
+                    teletype.setCursor('');
                 }
             });
         });
-    </script>
-    <script type="text/javascript">
-        $(document).ready(function() {
-            // Nothing yet
+
+        $(document).ready(function(){
+            $('#hpQ1Choice1').click(function() {
+                var choice1 = document.querySelector("#hpQ1Choice1");
+                choice1.classList.add("selectedAns");
+                chapter2(1);
+            });
+            $('#hpQ1Choice2').click(function() {
+                var choice2 = document.querySelector("#hpQ1Choice2");
+                choice2.classList.add("selectedAns");
+                chapter2(2);
+            });
         });
+
+        function chapter2(major) {
+            $('#ch2').teletype({
+                text: [ 'Great choice! Gimme just a second...^1000' ],
+                typeDelay: 0,
+                delay: 800,
+                loop: 1,
+                preserve: true,
+                callbackFinished: function( teletype ) {
+                    alert('All done! You chose ' +major);
+                }
+            });
+        }
     </script>
 </head>
 
@@ -78,9 +100,11 @@
             <form method="post" name="mainForm" action="main.php">
                 <div id="ch1" class="chatBot"></div>
                 <div id="hp1" class="humanPerson" style="display:none">
-                    <a href="">CS</a>
-                    <a href="">Psych</a>
+                    <div href="#" class="questionChoice" id="hpQ1Choice1">CS</div>
+                    <div href="#" class="questionChoice" id="hpQ1Choice2">Psych</div>
+                    <div href="#" class="questionChoice disabledChoice">More soon!</div>
                 </div>
+                <br><br><div id="ch2" class="chatBot"></div>
                 <!--<span id="ch3">Awesome sauce! One sec while I check what prereqs you'll need.</span>
                 <span id="ch4">Alright, back. Jumping right in, have you... </span>-->
             </form>

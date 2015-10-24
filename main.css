@@ -104,7 +104,7 @@ input:focus {
     width: 0;
     height: 0;
     border-style: solid;
-    border-width: 0 0 40px 100vw;
+    border-width: 0 0 50px 100vw;
     border-color: transparent transparent transparent #fefefe;
 }
 #landing .slantySVG {
@@ -112,4 +112,22 @@ input:focus {
     bottom:0;
     border-width: 0 0 20px 100vw;
     border-color: transparent transparent #fefefe transparent;
+}
+.questionChoice {
+    padding:.4em;
+    border-radius:2px;
+    color:#1c1e21;
+    text-decoration: none;
+    cursor: pointer;
+    background-color:#e5e5e6;
+    display: inline-block;
+}
+.disabledChoice {
+    cursor:default;
+}
+.questionChoice:hover {
+    background-color:#d1d1d2;
+}
+.selectedAns {
+    background-color:#d1d1d2;
 }
